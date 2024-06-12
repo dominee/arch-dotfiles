@@ -1,3 +1,6 @@
+# Load grc for colors, has to be loaded before p10k instant prompt
+[[ ! -f /etc/grc.zsh ]] || source /etc/grc.zsh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -6,10 +9,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+export ZSH=/usr/share/oh-my-zsh/
 
 # Created by newuser for 5.9
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
 
 plugins=(archlinux 
 	bundler 
@@ -24,7 +28,10 @@ plugins=(archlinux
 	cp 
 	dirhistory 
 	sudo
-	grc)
+	grc
+	zsh-autocomplete
+	zsh-autosuggestions 
+	zsh-syntax-highlighting) 
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -42,9 +49,6 @@ if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
 else
   [[ ! -f ~/.p10k-tty.zsh ]] || source ~/.p10k-tty.zsh
 fi
-
-# Load grc for colors
-[[ ! -f /etc/grc.zsh ]] || source /etc/grc.zsh
 
 # Load ssh keys into keychain (tmp)
 eval $(keychain --eval --quiet ~/.ssh/id_ecdsa)
