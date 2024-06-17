@@ -1,5 +1,13 @@
+# Colours
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
+# My old ones
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias wather='curl -4 -A Curl wttr.in/Bratislava'
+alias mute='mpc volume 0'
+alias unmute='mpc volume 15'
+
+# Colours
 export LESS='-R --use-color -Dd+r$Du+b$'
