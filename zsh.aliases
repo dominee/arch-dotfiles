@@ -11,3 +11,6 @@ alias unmute='mpc volume 15'
 
 # Colours
 export LESS='-R --use-color -Dd+r$Du+b$'
+
+# Helpers
+alias zsh-color='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+"\n"}; done'
