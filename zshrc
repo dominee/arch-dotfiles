@@ -52,3 +52,7 @@ fi
 
 # Load ssh keys into keychain (tmp)
 eval $(keychain --eval --quiet ~/.ssh/id_ecdsa)
+
+# My zsh aliases
+[[ ! -f ~/.zsh.aliases ]] || source ~/.zsh.aliases
+
