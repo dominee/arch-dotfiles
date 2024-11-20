@@ -22,5 +22,5 @@ alias route='ip r'
 alias vim='nvim'
 
 # To remember
-md-view='glow'
+alias md-view='glow'
 
